@@ -4,7 +4,7 @@ This code is a **C#** application that integrates with the **Azure OpenAI** serv
 
 The main purpose of the code is to send an image to an **OpenAI GPT** model (deployed in Azure) and ask the model to describe the image
 
-## 1. Setting up the Azure OpenAI client with a ChatGPT-4o model
+## 1. Setting up the Azure OpenAI service with a ChatGPT-4o model
 
 We login in Azure Portal and select the Azure OpenAI service
 
