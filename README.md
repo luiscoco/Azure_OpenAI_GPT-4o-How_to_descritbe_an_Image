@@ -66,13 +66,137 @@ We select the .NET 9 framework and press the Create button
 
 ![image](https://github.com/user-attachments/assets/31235fb5-f4e6-41b8-8570-d2622dcc8342)
 
+## 4. We enter the application source code
 
+Here’s a breakdown of the key parts of the code:
 
+**Setting up the Azure OpenAI client**:
 
+The **endpoint** is the URI of the Azure OpenAI service where the GPT model is deployed
 
-## 3. 
+**Credentials** represent the authentication method using an API key (AzureKeyCredential)
 
+An alternative method using passwordless authentication (DefaultAzureCredential) is commented out deploymentName specifies the name of the Azure OpenAI model that will be used (in this case, "gpt-4o")
 
-## 4. 
+**Initializing the OpenAI client**:
+
+An instance of **AzureOpenAIClient** is created with the endpoint and credentials
+
+The client retrieves a **ChatClient** using the model's deployment name, which is used to interact with the OpenAI chat functionality
+
+**Reading an image**:
+
+The image file is read from a local file path (**imagePath**). The file is then converted into a byte array (**imageBytes**)
+
+The byte array is wrapped into a BinaryData object (**imageData**), which is the format expected by the chat client
+
+**Preparing the chat message**:
+
+A list of **ChatMessage** objects is created. The message contains two parts:
+
+A text part asking the assistant to "describe the following image."
+
+An image part containing the image data (in PNG format)
+
+**Sending the request to the model**:
+
+The chat message list is sent to the model using the CompleteChatAsync() method of the ChatClient
+
+The response is stored in a ChatCompletion object
+
+**Error handling**:
+
+The code includes try-catch blocks for reading the image file and making the API call to ensure any issues (e.g., file not found or API error) are captured and handled gracefully
+
+**Displaying the response**:
+
+The assistant's response, which is expected to be a description of the image, is printed to the console using Console.WriteLine()
+
+**Purpose of the Code**:
+
+The application uses Azure OpenAI services to send an image for analysis by a GPT model
+
+The model is asked to describe the image, and the response is printed
+
+This code could be part of a system where an AI model is tasked with interpreting visual content, such as object recognition or scene description
+
+**Potential Use Cases**:
+
+Automated image description for accessibility
+
+Content moderation (analyzing images for specific content)
+
+Assisting visually impaired users by describing images
+
+```csharp
+using Azure;
+using Azure.AI.OpenAI;
+using OpenAI.Chat;
+
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        var endpoint = new Uri("https://cocoe-m2ae1t7j-swedencentral.openai.azure.com/");
+        var credentials = new AzureKeyCredential("1c1ad980b9ae425eb7ae14581fea4fe4");
+        var deploymentName = "gpt-4o"; // Ensure this matches your Azure OpenAI deployment name
+
+        var openAIClient = new AzureOpenAIClient(endpoint, credentials);
+        var chatClient = openAIClient.GetChatClient(deploymentName);
+
+        // Updated image path to the uploaded file location
+        var imagePath = "C:\\29. Azure OpenAI and the Semantic Kernel SDK\\Azure OpenAI\\GPT-4 Turbo with Vision\\bmwcar.png";
+
+        byte[] imageBytes;
+
+        try
+        {
+            imageBytes = File.ReadAllBytes(imagePath);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error reading the image file: {ex.Message}");
+            return;
+        }
+
+        // Convert the byte[] to BinaryData
+        BinaryData imageData = new BinaryData(imageBytes);
+
+        // Create the chat message list
+        List<ChatMessage> messages = new List<ChatMessage>
+        {
+            new UserChatMessage(
+                ChatMessageContentPart.CreateTextPart("Please describe the following image:"),
+                ChatMessageContentPart.CreateImagePart(imageData, "image/png"))
+        };
+
+        // Send the chat completion request
+        ChatCompletion chatCompletion;
+
+        try
+        {
+            chatCompletion = await chatClient.CompleteChatAsync(messages);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in chat completion: {ex.Message}");
+            return;
+        }
+
+        // Output the assistant's response
+        Console.WriteLine($"[ASSISTANT]:");
+        Console.WriteLine($"{chatCompletion.Content[0].Text}");
+    }
+}
+```
+
+## 5. We run the application
+
+We store an image in our hard disk
+
+![image](https://github.com/user-attachments/assets/6d30d9a1-8b9b-476c-b437-f96b91330299)
+
+We run the application and see the results
+
 
 
