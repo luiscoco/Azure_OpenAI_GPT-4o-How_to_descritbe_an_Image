@@ -38,6 +38,11 @@ Now we create a AI model deployment
 
 ![image](https://github.com/user-attachments/assets/84fe0b61-5a1d-4a11-bc28-95721889ce9b)
 
+![image](https://github.com/user-attachments/assets/83f84191-558b-466a-8710-5b10a14143cd)
+
+Select the Region where you deployed your Azure OpenAI, only the regions with quota are availe 
+
+![image](https://github.com/user-attachments/assets/0f80adc3-fe88-46fa-bf43-1f997586ab83)
 
 ## 2. Create a C# console (.NET9) application with Visual Studio 2022 Community Edition
 
