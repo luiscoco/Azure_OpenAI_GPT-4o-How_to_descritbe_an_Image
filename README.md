@@ -198,6 +198,4 @@ We store an image in our hard disk
 
 We run the application and see the results
 
-![image](https://github.com/user-attachments/assets/82fa7b91-81bd-4286-b9f4-2aa85a21d386)
-
-
+![image](https://github.com/user-attachments/assets/1599666d-723c-44e4-8769-d4df3db9e7a6)
