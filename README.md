@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/0d8c3881-c52d-4046-84d7-49361fb41907)# How to describe an image with Azure OpenAI service and .NET 9 C# console application
+# How to describe an image with Azure OpenAI service and .NET 9 C# console application
 
 This code is a **C#** application that integrates with the **Azure OpenAI** service using the **Azure SDK for .NET**
 
