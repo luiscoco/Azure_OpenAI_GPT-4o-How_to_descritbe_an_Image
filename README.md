@@ -43,6 +43,11 @@ We input the project name and location in the hard disk
 
 ![image](https://github.com/user-attachments/assets/e4a462d9-8d21-436c-9bdb-8e8816d3e212)
 
+We select the .NET 9 framework and press the Create button
+
+## 3. We load the Azure Open AI Nuget pakcakes
+
+![image](https://github.com/user-attachments/assets/31235fb5-f4e6-41b8-8570-d2622dcc8342)
 
 
 
