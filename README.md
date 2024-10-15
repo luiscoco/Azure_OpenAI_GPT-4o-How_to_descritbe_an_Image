@@ -26,7 +26,17 @@ We input the Azure Open AI service definition data and press the Next button and
 
 We verify the service was created
 
+![image](https://github.com/user-attachments/assets/9668483e-d43e-42b5-b6fc-eb5bbd26d96f)
 
+![image](https://github.com/user-attachments/assets/3a523e85-5ce4-4c0f-8e8c-55a735c3e076)
+
+Now we create a AI model deployment
+
+![image](https://github.com/user-attachments/assets/cfb50ba4-27b7-4b49-b5db-21b3c9ff947d)
+
+![image](https://github.com/user-attachments/assets/4a7ff54f-fa43-4cba-b4fd-8a68270243b8)
+
+![image](https://github.com/user-attachments/assets/84fe0b61-5a1d-4a11-bc28-95721889ce9b)
 
 
 ## 2. Create a C# console (.NET9) application with Visual Studio 2022 Community Edition
@@ -44,6 +54,8 @@ We input the project name and location in the hard disk
 ![image](https://github.com/user-attachments/assets/e4a462d9-8d21-436c-9bdb-8e8816d3e212)
 
 We select the .NET 9 framework and press the Create button
+
+![image](https://github.com/user-attachments/assets/13705d3f-f356-42bb-96aa-93a0cb5c0667)
 
 ## 3. We load the Azure Open AI Nuget pakcakes
 
