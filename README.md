@@ -22,9 +22,26 @@ We input the Azure Open AI service definition data and press the Next button and
 
 ![image](https://github.com/user-attachments/assets/f7ded4ff-8a04-49a1-934e-c11b6e14fe4c)
 
+![image](https://github.com/user-attachments/assets/d5d60d9d-543c-4ad7-8b10-c44ef7fabd3b)
+
+We verify the service was created
+
+
+
 
 ## 2. Create a C# console (.NET9) application with Visual Studio 2022 Community Edition
 
+We run Visual Studio 2022 and we create a new project
+
+![image](https://github.com/user-attachments/assets/0a1a3adf-2ecf-47da-8f73-182cf71c15c4)
+
+We select the C# console application as the project template and press the next button
+
+![image](https://github.com/user-attachments/assets/e86e936a-2c7f-48c9-938d-63f9135a5e6e)
+
+We input the project name and location in the hard disk
+
+![image](https://github.com/user-attachments/assets/e4a462d9-8d21-436c-9bdb-8e8816d3e212)
 
 
 
